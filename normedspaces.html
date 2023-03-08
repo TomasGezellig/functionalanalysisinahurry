@@ -477,7 +477,10 @@ title="Print to PDF"
 <li><p>Homogeneity: <span class="math notranslate nohighlight">\(||\alpha v|| = |\alpha|\cdot ||v||\)</span> for all <span class="math notranslate nohighlight">\(\alpha \in \mathbb{K}\)</span> and <span class="math notranslate nohighlight">\(v\in V\)</span></p></li>
 <li><p>Triangle inequality: <span class="math notranslate nohighlight">\(||v + w ||\leq ||v|| + ||w||\)</span> for all <span class="math notranslate nohighlight">\(v,w \in V\)</span></p></li>
 </ol>
-<p><em>Remark:</em> Continuity of norm?</p>
+<p><strong>Remark:</strong> Something that is often underappreciated is the fact that a norm is a continuous function. This follows from the so called reverse triangle inequality, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\Big| ||v|| - ||u|| \Big| \leq ||v-u||, \quad \forall v,u\in V\]</div>
+<p>Indeed, <span class="math notranslate nohighlight">\(||v|| = ||v - u + u|| \leq ||v-u|| + ||u|| \implies ||v|| - ||u|| \leq ||v-u||\)</span>, and likewise <span class="math notranslate nohighlight">\(||u|| - ||v|| \leq ||u-v||\)</span>. Finally, observe that <span class="math notranslate nohighlight">\(||u-v|| = ||v-u||\)</span> by homogeneity. Thus, the reverse triangle inequality follows.</p>
 <p>Intuitively, a norm is simply a measure of the magnitude of a vector, i.e. an element of the vector space. More importantly, a norm allows us to relate two vectors via a <em>metric</em>, i.e. a distance function.</p>
 <p><strong>Definition:</strong> Let <span class="math notranslate nohighlight">\(V\)</span> be some vector space. A <em>metric</em> will be a map <span class="math notranslate nohighlight">\(d: V\times V \to \mathbb{R}_0^+\)</span> with the following properties:</p>
 <ol class="arabic simple">
