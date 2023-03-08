@@ -6,7 +6,11 @@ One can arrive at Banach spaces by imposing more structure into the general noti
 2) Homogeneity: $||\alpha v|| = |\alpha|\cdot ||v||$ for all $\alpha \in \mathbb{K}$ and $v\in V$
 3) Triangle inequality: $||v + w ||\leq ||v|| + ||w||$ for all $v,w \in V$ 
 
-*Remark:* Continuity of norm?
+**Remark:** Something that is often underappreciated is the fact that a norm is a continuous function. This follows from the so called reverse triangle inequality, i.e. 
+
+$$\Big| ||v|| - ||u|| \Big| \leq ||v-u||, \quad \forall v,u\in V$$
+
+Indeed, $||v|| = ||v - u + u|| \leq ||v-u|| + ||u|| \implies ||v|| - ||u|| \leq ||v-u||$, and likewise $||u|| - ||v|| \leq ||u-v||$. Finally, observe that $||u-v|| = ||v-u||$ by homogeneity. Thus, the reverse triangle inequality follows.
 
 Intuitively, a norm is simply a measure of the magnitude of a vector, i.e. an element of the vector space. More importantly, a norm allows us to relate two vectors via a *metric*, i.e. a distance function. 
 
