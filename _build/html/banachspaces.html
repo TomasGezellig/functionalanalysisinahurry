@@ -308,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Note to the reader
                 </a>
             </li>
         </ul>
@@ -475,7 +475,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\lim_{n,m \to \infty} ||x_n-x_m|| =0\]</div>
 <p>implies the existence of an <span class="math notranslate nohighlight">\(x\in X\)</span>, such that <span class="math notranslate nohighlight">\(x_n \to x\)</span> with respect to <span class="math notranslate nohighlight">\(||\cdot||\)</span>. A complete normed space is said to be a <em>Banach space</em>.</p>
-<p><em>Examples:</em></p>
+<p><strong>Examples:</strong></p>
 <ol class="arabic simple">
 <li><p>Euclidean spaces. On <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, consider the norm <span class="math notranslate nohighlight">\(||x||_2 = \sqrt{\sum_{i=1}^n x_i^2}\)</span>.</p></li>
 <li><p>Sequence spaces. The space <span class="math notranslate nohighlight">\(l^p(\mathbb{R})\)</span> consists of all sequences <span class="math notranslate nohighlight">\(x = (x_n)_{n\in \mathbb{N}}\)</span> taking values in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> such that <span class="math notranslate nohighlight">\(||x||_p = \Big(\sum_{n=1}^\infty |x_n|^p \Big)^{1/p}&lt;\infty\)</span>.</p></li>
@@ -486,8 +486,18 @@ title="Print to PDF"
 <p><strong>Theorem:</strong> Consider some normed space <span class="math notranslate nohighlight">\((X,||\cdot||)\)</span>. Then, <span class="math notranslate nohighlight">\(X\)</span> is a Banach space if and only if every absolutely convergent sum in <span class="math notranslate nohighlight">\(X\)</span> is convergent in <span class="math notranslate nohighlight">\(X\)</span>, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\sum_{n\geq 1} ||x_n|| &lt;\infty \implies \exists \ x\in X: \sum_{n\geq 1} x_n =x\]</div>
-<p><em>proof:</em></p>
+<p><strong>proof:</strong> Let us begin by assuming that we have a Banach space and that we assume an absolutely convergent sum <span class="math notranslate nohighlight">\(\sum_{n\geq 1} ||x_n|| &lt;\infty\)</span>. Now, consider the sequence of partial sum, i.e. <span class="math notranslate nohighlight">\(\Big( \sum_{i=1}^n x_i \Big)_{n\geq 1}\)</span>. Consider some <span class="math notranslate nohighlight">\(n&gt;m\)</span> and notice that</p>
+<div class="math notranslate nohighlight">
+\[ \Big|\Big| \sum_{i=1}^n x_i - \sum_{i=1}^m x_i \Big|\Big| = \Big|\Big| \sum_{i=m+1}^n x_i  \Big|\Big| \to 0, \quad m,n\to \infty \]</div>
+<p>Hence the sequence of partial sums is a Cauchy sequence. Since <span class="math notranslate nohighlight">\(X\)</span> is Banach we conclude that the sequence of partial sums has a limit, and so <span class="math notranslate nohighlight">\(\sum_{n\geq 1} x_n\)</span> converges. This proves one implication. Now, assume that every absolutely convergent sum converges in <span class="math notranslate nohighlight">\(X\)</span>, and consider some Cauchy sequenc <span class="math notranslate nohighlight">\((x_n)_{n\geq 1}\)</span> in <span class="math notranslate nohighlight">\(X\)</span>. We’d like to prove that <span class="math notranslate nohighlight">\((x_n)_{n\geq 1}\)</span> has a limit. Since the sequence is Cauchy we can pick indices <span class="math notranslate nohighlight">\(n_1 &lt; n_2 &lt; n_3 &lt;...\)</span> such that <span class="math notranslate nohighlight">\(||x_i-x_j|| &lt;2^{-k}\)</span> for <span class="math notranslate nohighlight">\(i,j \geq n_k\)</span>. This way <span class="math notranslate nohighlight">\(x_{n_1} + \sum_{k \geq 1} (x_{n_{k+1}} - x_{n_k})\)</span> is an absolutely convergent series. Indeed,</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{k \geq 1} ||x_{n_{k+1}} - x_{n_k}|| \sum_{k \geq 1} \frac{1}{2^k} &lt; \infty  \leq \]</div>
+<p>Thus, we can use our assumption to conclude that the partial sums have a limit, i.e. there is an <span class="math notranslate nohighlight">\(x\in X\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[ x = \lim_{m \to \infty} \Big( x_{n_1} + sum_{k = 1}^m (x_{n_{k+1}} - x_{n_k})\Big) = \lim_{m\to \infty} x_{n_m}\]</div>
+<p>This way we conclude that the subsequence <span class="math notranslate nohighlight">\((x_{n_k})_{k\geq 1}\)</span> has limit equal to <span class="math notranslate nohighlight">\(x\)</span>. To conclude that the entire sequence converges to <span class="math notranslate nohighlight">\(x\)</span> simply notice that <span class="math notranslate nohighlight">\(||x-x_m|| \leq ||x - x_{n_m}|| + ||x_{n_m} - x_m|| \to 0\)</span>. The first term goes to zero because the subsequence converges, and the second term goes to zero as <span class="math notranslate nohighlight">\(m\to \infty\)</span> because <span class="math notranslate nohighlight">\((x_n)_{n\geq 1}\)</span> is a Cauchy sequence by hypothesis.</p>
 <p><strong>Theorem:</strong> Consider some normed space <span class="math notranslate nohighlight">\((X,||\cdot||)\)</span> and a subspace <span class="math notranslate nohighlight">\(Y\subset X\)</span>. Then, <span class="math notranslate nohighlight">\(Y\)</span> is a Banach space with respect to the norm inherited from <span class="math notranslate nohighlight">\(X\)</span> if and only if <span class="math notranslate nohighlight">\(Y\)</span> is a closed subspace.</p>
+<p><strong>proof:</strong> Assume <span class="math notranslate nohighlight">\(Y\)</span> is Banach and consider some convergent sequence in <span class="math notranslate nohighlight">\(Y\)</span>. Since <span class="math notranslate nohighlight">\(Y\)</span> is Banach the limit of the sequence lies necessarily inside <span class="math notranslate nohighlight">\(Y\)</span>. But this means that <span class="math notranslate nohighlight">\(Y\)</span> contains all its limit points, hence it’s closed. Now, assuming that <span class="math notranslate nohighlight">\(Y\)</span> is closed. Consider some Cauchy sequence in <span class="math notranslate nohighlight">\(Y\)</span>. Then, since <span class="math notranslate nohighlight">\(X\)</span> is Banach the sequence has a limit. And, since <span class="math notranslate nohighlight">\(Y\)</span> is closed the limit lies inside <span class="math notranslate nohighlight">\(Y\)</span>. Therefore, <span class="math notranslate nohighlight">\(Y\)</span> is a Banach space itself.</p>
 </section>
 
     <script type="text/x-thebe-config">
