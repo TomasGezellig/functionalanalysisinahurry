@@ -29,7 +29,7 @@ $$ \sum_{k \geq 1} ||x_{n_{k+1}} - x_{n_k}|| \sum_{k \geq 1} \frac{1}{2^k} < \in
 
 Thus, we can use our assumption to conclude that the partial sums have a limit, i.e. there is an $x\in X$ such that
 
-$$ x = \lim_{m \to \infty} \Big( x_{n_1} + sum_{k = 1}^m (x_{n_{k+1}} - x_{n_k})\Big) = \lim_{m\to \infty} x_{n_m}$$
+$$ x = \lim_{m \to \infty} \Big( x_{n_1} + \sum_{k = 1}^m (x_{n_{k+1}} - x_{n_k})\Big) = \lim_{m\to \infty} x_{n_m}$$
 
 This way we conclude that the subsequence $(x_{n_k})_{k\geq 1}$ has limit equal to $x$. To conclude that the entire sequence converges to $x$ simply notice that $||x-x_m|| \leq ||x - x_{n_m}|| + ||x_{n_m} - x_m|| \to 0$. The first term goes to zero because the subsequence converges, and the second term goes to zero as $m\to \infty$ because $(x_n)_{n\geq 1}$ is a Cauchy sequence by hypothesis. 
 
