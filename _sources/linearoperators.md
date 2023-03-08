@@ -30,7 +30,7 @@ $1) \implies 2):$ Simply notice that $||Tx - Tx_0|| = ||T(x-x_0)|| \leq ||T|| \c
 
 $2) \implies 3):$ Obvious. 
 
-$3) \implies 1):$ 
+$3) \implies 1):$ Assume $T$ is continuous at $x_0$. Then, by definition, for all $\epsilon>0$ there is a $\delta>0$ such that $||y-x_0|| \leq \delta \implies ||Ty-Tx_0|| \leq \epsilon$. In particular, we can take $\epsilon = 1$. Thus, we conclude that there is a $\delta>0$ such that $||x_0-y|| \leq \delta \implies ||Tx_0 - Ty|| \leq 1$. Now, observe that any $x \in X$ such that $||x|| \leq \delta$ can be written as $x_0 - y$ with $||x_0 - y|| \leq \delta$. Therefore, $||x|| \leq \delta \implies ||Tx|| \leq 1$. Finally, use homogeneity and scale everything by $1/\delta$. This way $||x|| \leq 1 \implies ||Tx|| \leq 1/\delta$. Hence, $||T|| \leq 1/\delta$, i.e. $T$ is bounded. 
 
 Now, guess what... The set of all linear bounded operators from $X$ to $Y$ forms a vector space as well! Indeed, scalar multiplication and addition are defined in a very natural way by taking 
 
@@ -62,7 +62,7 @@ Therefore $||T-T_n||\leq \epsilon$.
 
 We end this section with arguably the most used and elementary result about bounded linear operators. This result goes by the name "*density argument*" and its usefulness comes from the fact that it is often the case in analysis that a given property, which can be written in the form of an operator, is more easily proved to be true for a specific collection of objects. If we then show that this collection is dense on a given space, we can use the density argument to generalise the property to the whole space. 
 
-**Theorem:** Consider some normed space $X$ and a Banach space $Y$. Assume that $X_0$ is a dense subspace of $X$. If $T_0:X_0 \to Y$ is a bounded linear operator, then there exists a unique bounded linear operator $T:X\to Y$ that extends $T_0$, i.e. $T|_{X_0} = T_0$. Moreover, $||T|| = ||T_0||$. 
+**Theorem (Density Argument):** Consider some normed space $X$ and a Banach space $Y$. Assume that $X_0$ is a dense subspace of $X$. If $T_0:X_0 \to Y$ is a bounded linear operator, then there exists a unique bounded linear operator $T:X\to Y$ that extends $T_0$, i.e. $T|_{X_0} = T_0$. Moreover, $||T|| = ||T_0||$. 
 
 **proof:** Let us consider some $x\in X$. Then, by density of $X_0$ we have a sequence $(x_n)_{n\geq 1} \subset X_0$ such that $x_n \to x$. Now, notice that 
 
